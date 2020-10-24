@@ -62,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "SpaceX:build"
+            "browserTarget": "SpaceX:build",
+			"proxyConfig": "./proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SpaceX"
+    }
+  },
+  "defaultProject": "SpaceX",
+  "cli": {
+    "analytics": "ace22b59-926b-4a6e-9236-ff4507d977c5"
+  }
 }

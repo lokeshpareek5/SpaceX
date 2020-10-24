@@ -1,0 +1,46 @@
+<div class="container">
+    <header class="header">
+        <h2>SpaceX Launch Programs</h2>
+    </header>
+    <div class="wrapper">
+        <div class="filter">
+            <p class="filter-title">Filters</p>
+            <p class="filter-sub-title">Launch Year</p>
+            <div class="inline-block" *ngFor="let year of years">
+                <input class="year-btn" type="button" value="{{year.val}}" (click)="lunchAll()"/>
+            </div>
+            <p class="filter-sub-title">Successful Launch</p>
+            <div class="inline-block">
+                <input class="year-btn" type="button" value="True" (click)="lunchSuccess(true)" />
+                <input class="year-btn" type="button" value="False" (click)="lunchSuccess(false)" />
+            </div>
+            <p class="filter-sub-title">Successful Landing</p>
+            <div class="inline-block">
+                <input class="year-btn" type="button" value="True" (click)="lunchAndLandingSucc(true)" />
+                <input class="year-btn" type="button" value="False" (click)="lunchAndLandingSucc(false)" />
+            </div>
+        </div>
+        <div class="content">
+            <div class="parent">
+                <div class="row" *ngFor="let item of data">
+                    <div class="child-content">
+                        <img class="logo" [src]="item.links.mission_patch" alt="item.details">
+                        <p class="line-1">{{item.mission_name}} #{{item.flight_number}}</p>
+                        <p class="desc">Mission Ids:</p>
+                        <ul>
+                            <li *ngFor="let missionData of item.mission_id">
+                                {{missionData}}
+                            </li>
+                        </ul>
+                        <p class="desc">Launch Year: <span class="desc-text">{{item.launch_year}}</span></p>
+                        <p class="desc">Successful Launch: <span class="desc-text">{{item.launch_success}}</span></p>
+                        <p class="desc">Successful Landing: <span class="desc-text">{{item.launch_landing}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <b>Developed By:</b> Lokesh Pareek
+    </footer>
+</div>

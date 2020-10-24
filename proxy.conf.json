@@ -1,0 +1,8 @@
+{
+    "/*": {
+      "target": "http://api.spacexdata.com/v3",
+      "secure": false,
+      "changeOrigin": true,
+	  "logLevel": "debug"
+    }
+  }
