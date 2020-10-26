@@ -17,8 +17,8 @@ export class SpacexListingService {
         return config;
     }
     public getAllSpecexListingData() {
-        return this.http.get<Config>('../../assets/data/launches.json', this.getConfig());
-        
+        return this.http.get<Config>('https://api.spaceXdata.com/v3/launches?limit=100', this.getConfig());
+        // return this.http.get<Config>('../../assets/data/launches.json', this.getConfig());
     }
 
     public getLunchSuccessData(){
